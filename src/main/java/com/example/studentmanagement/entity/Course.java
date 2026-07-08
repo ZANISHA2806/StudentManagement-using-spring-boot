@@ -19,8 +19,12 @@ public class Course {
 
     @ManyToMany(mappedBy = "courses")
     @JsonBackReference("student-courses")
+
+
     private List<Student> students = new ArrayList<>();
 
+    @Column(nullable = false)
+    private boolean deleted = false;
     public Course() {
     }
 
@@ -45,6 +49,14 @@ public class Course {
 
     public String getCourseName() {
         return courseName;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 
     public List<Student> getStudents() {

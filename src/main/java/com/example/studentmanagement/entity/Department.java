@@ -15,7 +15,7 @@ public class Department {
     private Long id;
 
     @Column(nullable = false)
-    private String name;
+    private String department_name;
 
     @OneToMany(mappedBy = "department")
     //"I'm NOT creating another foreign key."
@@ -28,9 +28,9 @@ public class Department {
     public Department() {
     }
 
-    public Department(Long id, String name) {
+    public Department(Long id, String department_name) {
         this.id = id;
-        this.name = name;
+        this.department_name = department_name;
     }
     // this method will update student as well as department table when the student is added
 
@@ -48,8 +48,8 @@ public class Department {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getDepartment_name() {
+        return department_name;
     }
 
     public List<Student> getStudents() {
@@ -60,8 +60,8 @@ public class Department {
         this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDepartment_name(String department_name) {
+        this.department_name = department_name;
     }
 
     public void setStudents(List<Student> students) {

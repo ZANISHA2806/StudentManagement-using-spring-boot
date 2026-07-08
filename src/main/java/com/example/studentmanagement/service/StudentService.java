@@ -1,5 +1,7 @@
 package com.example.studentmanagement.service;
 
+import com.example.studentmanagement.dto.StudentRequest;
+import com.example.studentmanagement.dto.StudentResponse;
 import com.example.studentmanagement.entity.Student;
 import org.springframework.data.domain.Page;
 
@@ -7,22 +9,23 @@ import java.util.List;
 
 public interface StudentService {
 
-    Student saveStudent(Student student);
+    StudentResponse saveStudent(StudentRequest request);
 
-    Student getStudentById(Long id);
+    StudentResponse getStudentById(Long id);
 
-    List<Student> getAllStudents();
+    List<StudentResponse> getAllStudents();
 
-    Student updateStudent(Long id, Student student);
+
+    StudentResponse updateStudent(Long id,StudentRequest request);
 
     void deleteStudent(Long id);
 
     void updateStudentName(Long id, String name);
 
-    Student assignDepartment(Long studentId, Long departmentId);
+    StudentResponse assignDepartment(Long studentId, Long departmentId);
 
-    Student assignCourse(Long studentId, Long courseId);
+    StudentResponse assignCourse(Long studentId, Long courseId);
 
-    Page<Student> getStudents(int page, int size, String sortBy);
+    Page<StudentResponse> getStudents(int page, int size, String sortBy);
 
 }

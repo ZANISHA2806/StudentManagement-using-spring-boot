@@ -2,19 +2,21 @@ package com.example.studentmanagement.controller;
 
 import com.example.studentmanagement.entity.Department;
 import com.example.studentmanagement.service.DepartmentService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/departments")
 public class DepartmentController {
 
     private final DepartmentService departmentService;
 
-    public DepartmentController(DepartmentService departmentService) {
-        this.departmentService = departmentService;
-    }
+//    public DepartmentController(DepartmentService departmentService) {
+//        this.departmentService = departmentService;
+//    }
 
     // Create Department
     @PostMapping
